@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArtGo</title>
+  <meta name="description" content="Um site destinado para artistas e apreciadores de artes">
+  <link rel="stylesheet" type="text/css" href="./src/styles/style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <img class="cabecalho-img" src="./src/img/logo.png" alt="logoimg">
+    <nav class="cabecalho-menu">
+      <a class="cabecalho-menu-item">Início</a>
+      <a class="cabecalho-menu-item">Sobre nós</a>
+      <a class="cabecalho-menu-item">Serviços</a>
+      <a class="cabecalho-menu-item">Contato</a>
+    </nav>
+  </header>
+
+  <div class="box">
+    <form action="" class="form-box" id="cadastro">
+        <fieldset class="content">
+            <legend class="form-title"><strong>Faça seu cadastro de artista</strong></legend>
+            <br>
+          <div class="row">
+              <img class="formimg" src="./src/img/art.png" alt="">
+          </div>  
+             <div class="inputbox">
+                <input type="text" name="firstname" id="firstname" class="inputuser" required placeholder="Nome">
+             </div>              
+              <br>
+              <br>
+            <div class="inputbox">
+                <input type="text" name="lastname" id="lastname" class="inputuser" required placeholder="Sobrenome">
+            </div>
+              <br>
+              <br>
+            <div class="inputbox">
+                <input type="text" name="email" id="email" class="inputuser" required placeholder="Email">
+            </div>
+              <br>
+              <br>
+              <div class="inputbox">
+                <input type="text" name="username" id="username" class="inputuser" required placeholder="Nome de usuário" onchange="">
+            </div>
+              <br>
+              <br>
+              <div class="inputbox">
+                <input type="password" name="senha" id="idsenha" class="inputuser" required onblur='return shortpassword()' onchange='confereSenha()' placeholder="Senha">
+            </div>
+              <br>
+              <br>
+              <div class="inputbox">
+                <input type="password" name="confirma" id="confirma" class="inputuser" required onchange='confereSenha()' placeholder="Confirme sua senha">
+            </div>
+              <br>
+              <br>
+            <p><strong>Gênero:</strong></p>
+              <br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Masculino</label>
+              <br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Feminino</label>
+              <br>
+            <input type="radio" id="other" name="gender" value="other" checked>
+            <label for="other">Outro</label>
+              <br>
+              <br>
+            <p><strong>Você é um artista?</strong></p>
+              <br>
+            <input type="radio" id="yesartist" name="artistquestion" value="yesartist">
+            <label for="yesartist">Eu sou um artista</label>
+              <br>
+            <input type="radio" id="noartist" name="artistquestion" value="noartist" checked required>
+            <label for="noartist">Eu não sou um artista</label>
+              <br>
+              <br>
+            <p><strong>Seu estilo de desenho:</strong></p>
+              <br>
+            <input type="checkbox" id="realism" name="drawstyle" value="realism">
+            <label for="realism">Realismo</label>
+              <br>
+            <input type="checkbox" id="anime" name="drawstyle" value="anime">
+            <label for="anime">Anime</label>
+              <br>
+            <input type="checkbox" id="terror" name="drawstyle" value="terror">
+            <label for="terror">Terror</label>
+              <br>
+            <input type="checkbox" id="ownstyle" name="drawstyle" value="ownstyle">
+            <label for="ownstyle">Estilo próprio</label>
+              <br>
+            <input type="checkbox" id="otherstyle" name="drawstyle" value="otherstyle">
+            <label for="otherstyle">Outro</label>
+              <br>
+              <br>
+              <label for="birthdate"><strong>Data de nascimento</strong></label>
+            <input type="date" name="birthdate" id="birthdate" required>
+              <br>
+              <br>
+            <div class="local">
+               <select name="local" id="local" class="local" required>
+                <option value="none" >Selecione seu estado</option>
+                 <option value="AC">Acre - AC</option>
+                 <option value="AL">Alagoas - AL</option>
+                 <option value="AP">Amapá - AP</option>
+                 <option value="AM">Amazonas - AM</option>
+                 <option value="BA">Bahia - BA</option>
+                 <option value="CE">Ceará - CE</option>
+                 <option value="DF">Distrito Federal - DF</option>
+                 <option value="ES">Espírito Santo - ES</option>
+                 <option value="GO">Goiás - GO</option>
+                 <option value="MA">Maranhão - MA</option>
+                 <option value="MT">Mato Grosso - MT</option>
+                 <option value="MS">Mato Grosso do Sul - MS</option>
+                 <option value="MG">Minas Gerais - MG</option>
+                 <option value="PA">Pará - PA</option>
+                 <option value="PB">Paraíba - PB</option>
+                 <option value="PR">Paraná - PR</option>
+                 <option value="PE">Pernambuco - PE</option>
+                 <option value="PI">Piauí - PI</option>
+                 <option value="RJ">Rio de Janeiro - RJ</option>
+                 <option value="RN">Rio Grande do Norte - RN</option>
+                 <option value="RS">Rio Grande do Sul - RS</option>
+                 <option value="RO">Rondônia - RO</option>
+                 <option value="RR">Roraima - RR</option>
+                 <option value="SC">Santa Catarina - SC</option>
+                 <option value="SP">São Paulo - SP</option>
+                 <option value="SE">Sergipe - SE</option>
+                 <option value="TO">Tocantins - TO</option>
+               </select>
+            </div>
+            <br>
+            <input type="submit" name="send" id="submit" class="submit">
+            <div class="loginanchor">
+              <p>Já é cadastrado? Faça <a href="">login</a>.</p>
+            </div>
+        </fieldset> 
+    </form>
+</div>
+  <footer class="rodape">
+       <h2 class="rodape-titulo">ArtGo - Wesllen Araújo &copy; 2023</h2>
+  </footer> 
+</body>
+<script>    
+  function shortpassword() {
+       var short = document.querySelector('input[name=senha]').value;
+         if(short.lenght < 6) {
+           alert('Senha curta');
+           return false;
+         }
+  }
+
+  function confereSenha() {
+       var senha = document.querySelector('input[name=senha]');
+       var confirma = document.querySelector('input[name=confirma]');
+
+       if (confirma.value === senha.value) {
+           confirma.setCustomValidity('');
+       } else {
+           confirma.setCustomValidity('As senhas não conferem');
+       }
+  }
+</script>
+</html>
